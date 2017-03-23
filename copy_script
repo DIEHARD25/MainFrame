@@ -1,0 +1,10 @@
+#!/bin/bash
+echo "Копируем файлы тестов на удаленный сервер"
+scp -r ltests/ test:/home/koleschenko/NetBeansProjects/LucreCustomProvider/
+echo "Копирование файлов тестов успешно завершено!"
+scp -r lconfig/ test:/home/koleschenko/NetBeansProjects/LucreCustomProvider/
+echo "Копирование файлов конфигурации успешно завершено!"
+scp -r lutils/ test:/home/koleschenko/NetBeansProjects/LucreCustomProvider/
+echo "Копирование утилит и инструментов приложения успешно завершено!"
+echo "Копирование завершено!"
+exit 0

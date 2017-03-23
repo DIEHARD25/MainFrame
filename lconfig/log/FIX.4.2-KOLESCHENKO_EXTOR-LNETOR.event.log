@@ -1,0 +1,15 @@
+20160621-10:55:08: Session FIX.4.2:KOLESCHENKO_EXTOR->LNETOR schedule is daily, 21:05:00-UTC - 21:03:00-UTC
+20160621-10:55:08: Created session: FIX.4.2:KOLESCHENKO_EXTOR->LNETOR
+20160621-10:55:09: Initiated logon request
+20160621-10:55:09: Logon contains ResetSeqNumFlag=Y, resetting sequence numbers to 1
+20160621-10:55:09: Received logon
+20160621-10:55:34: Session FIX.4.2:KOLESCHENKO_EXTOR->LNETOR schedule is daily, 21:05:00-UTC - 21:03:00-UTC
+20160621-10:55:34: Created session: FIX.4.2:KOLESCHENKO_EXTOR->LNETOR
+20160621-10:55:35: Initiated logon request
+20160621-10:55:35: Logon contains ResetSeqNumFlag=Y, resetting sequence numbers to 1
+20160621-10:55:35: Received logon
+20161223-15:25:35.583: Session FIX.4.2:KOLESCHENKO_EXTOR->LNETOR schedule is daily, 21:05:00-UTC - 21:03:00-UTC
+20161223-15:25:35.590: Created session: FIX.4.2:KOLESCHENKO_EXTOR->LNETOR
+20161223-15:25:36.725: Initiated logon request
+20161223-15:25:36.861: Logon contains ResetSeqNumFlag=Y, resetting sequence numbers to 1
+20161223-15:25:36.864: Received logon
