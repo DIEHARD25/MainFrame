@@ -106,6 +106,7 @@ function initiatorReceiveMessage2 (id, sessionId, message)
         table.removekey(fixGate, message.symbol)
         fixGate[message.symbol] = {}
         fixGate[message.symbol] = message
+        print(message.snapshotNum)
 --        --for i = 1, message.noMDEntries do
 --        for i = 1, message.noMDEntries do
 --            print((message[i].MDEntryType - 48) .. " - " .. message[i].MDEntryPx .. " - " .. message[i].MDEntrySize .. " - " .. message[i].MDEntryPositionNo .. " - " .. message[i].MDEntryID .. " - " .. message[i].MDEntryOriginator)
@@ -433,9 +434,9 @@ while true do
         medPlot3 = 0
         medPlot4 = 0
         
-    elseif objListener : getLastMessage() : getTitle() == "Send median results" then
+    elseif objListener : getLastMessage() : getTitle() == "FixGateAnalizer" then
         objListener : setLastMessage(" ")
-        
+        orderSession.start(initiator2)
         
         
         

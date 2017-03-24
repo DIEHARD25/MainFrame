@@ -345,6 +345,7 @@ quickfix.fix42.OrderCancelRequest
 quickfix.field.OrderQty
 quickfix.field.OrdType
 java.lang.Object
+java.lang.Long
 quickfix.Message$Header
 quickfix.SessionID
 quickfix.field.TimeInForce
@@ -353,6 +354,7 @@ java.lang.System
 quickfix.field.AvgPx
 java.io.PrintStream
 quickfix.field.Price
+java.lang.Character
 quickfix.field.Side
 quickfix.field.SecurityExchange
 quickfix.field.LeavesQty

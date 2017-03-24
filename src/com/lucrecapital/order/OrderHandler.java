@@ -144,10 +144,12 @@ public class OrderHandler
                 tmp.set("MDEntryPositionNo", group.getMDEntryPositionNo().getValue());
               //  group.get(MDEntryOriginator);
                 tmp.set("MDEntryID", group.getMDEntryID().getValue());
-                
+                String tmp1 = group.getMDEntryID().getValue();
+                order.set("snapshotNum", Long.parseLong(tmp1.substring(tmp1.indexOf("_") + 1),Character.MAX_RADIX));
                 tmp.set("MDEntryOriginator", group.getMDEntryOriginator().getValue());
                 order.set(i, tmp);
             }
+            
             
             LuaValue[] args = {LuaValue.valueOf(id), LuaValue.valueOf(sid.toString()), order};
             handler.invoke(args);
