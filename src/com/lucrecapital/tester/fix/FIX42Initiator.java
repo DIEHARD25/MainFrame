@@ -43,7 +43,7 @@ public class FIX42Initiator extends MessageCracker implements Application {
         try {
             MessageStoreFactory storeFactory = new MemoryStoreFactory();
             SessionSettings settings = new SessionSettings(config);
-            LogFactory logFactory = new FileLogFactory(settings);
+            FileLogFactory logFactory = new FileLogFactory(settings);
             MessageFactory messageFactory = new DefaultMessageFactory();
             initiator = new ThreadedSocketInitiator(this, storeFactory, settings, logFactory, messageFactory);
             this.id = myID;

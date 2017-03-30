@@ -1,17 +1,16 @@
 package com.lucrecapital.order;
 
+import com.lucrecapital.lp.log.RotatingFileLogFactory;
 import quickfix.Acceptor;
 import quickfix.Application;
 import quickfix.DefaultMessageFactory;
 import quickfix.DoNotSend;
 import quickfix.FieldNotFound;
-import quickfix.FileLogFactory;
 import quickfix.FileStoreFactory;
 import quickfix.IncorrectDataFormat;
 import quickfix.IncorrectTagValue;
 import quickfix.Initiator;
 import quickfix.LogFactory;
-import quickfix.MemoryStoreFactory;
 import quickfix.Message;
 import quickfix.MessageFactory;
 import quickfix.MessageStoreFactory;
@@ -41,7 +40,7 @@ public class FIXOrderParser extends MessageCracker implements Application
     {
       SessionSettings     settings       = new SessionSettings(config);
       MessageStoreFactory storeFactory   = new FileStoreFactory(settings);
-      LogFactory          logFactory     = new FileLogFactory(settings);
+      LogFactory          logFactory     = new RotatingFileLogFactory(settings);
       MessageFactory      messageFactory = new DefaultMessageFactory();
 
       initiator = isInitiator ?
@@ -122,14 +121,14 @@ public class FIXOrderParser extends MessageCracker implements Application
 // --------------------------------------------------------------------------------------------------------------------
   public void toApp (Message message, SessionID sid) throws DoNotSend
   {
-    if (DEBUG) System.out.println("To app: " + sid + " " + message);
+    if (false) System.out.println("To app: " + sid + " " + message);
   }
 
 // --------------------------------------------------------------------------------------------------------------------
   public void fromApp (Message message, SessionID sid)
     throws FieldNotFound, IncorrectDataFormat, IncorrectTagValue, UnsupportedMessageType
   {
-    if (DEBUG) System.out.println("From app: " + sid + " " + message);
+    if (false) System.out.println("From app: " + sid + " " + message);
 
     crack(message, sid);
   }

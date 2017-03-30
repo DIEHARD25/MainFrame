@@ -128,7 +128,7 @@ public class OrderHandler
             message.get(noMDEntries);
             
             order.set("noMDEntries", noMDEntries.getValue()); // 268
-            System.out.print(noMDEntries.getValue());
+            //System.out.print(noMDEntries.getValue());
             SpecialMDClass group = new SpecialMDClass();
 
             for (int i = 1; i <= noMDEntries.getValue(); i++) {

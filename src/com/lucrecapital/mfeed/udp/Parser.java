@@ -109,6 +109,7 @@ final class Parser implements PacketListener
       pls.sellBook[pls.sellPos].side = PriceLevels.END_OF_BOOK_MARKER;
       pls.buyBook[pls.buyPos].side = PriceLevels.END_OF_BOOK_MARKER;
       plsA.set(eventListener.onPriceLevels(pls));
+      pls.setMsgSeqNum(seqNum);
     }
   }
 }

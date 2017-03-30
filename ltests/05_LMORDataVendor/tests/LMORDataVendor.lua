@@ -67,6 +67,7 @@ function pl_handler2(id, snapshot)
     table.removekey(multicast, snapshot.symbol)
     multicast[snapshot.symbol] = {}
     multicast[snapshot.symbol] = snapshot
+    --print(snapshot.number)
 end
 --
 function acceptorReceiveMessage (id, sessionId, message)
@@ -106,7 +107,7 @@ function initiatorReceiveMessage2 (id, sessionId, message)
         table.removekey(fixGate, message.symbol)
         fixGate[message.symbol] = {}
         fixGate[message.symbol] = message
-        print(message.snapshotNum)
+        --print(message.snapshotNum)
 --        --for i = 1, message.noMDEntries do
 --        for i = 1, message.noMDEntries do
 --            print((message[i].MDEntryType - 48) .. " - " .. message[i].MDEntryPx .. " - " .. message[i].MDEntrySize .. " - " .. message[i].MDEntryPositionNo .. " - " .. message[i].MDEntryID .. " - " .. message[i].MDEntryOriginator)
@@ -192,13 +193,13 @@ while true do
 --    ss.symbol = objListener : getCurrentTimestamp()
 --    mgen.send(mfeed, ss)
       utils.sleep(2000)
-      for key, value in pairs(fixGate) do
-          fixGateCounter = fixGateCounter + 1
-          if value.symbol ~= nil then
-            print(value.symbol)
-          end
-      end
-      print(fixGateCounter)
+--      for key, value in pairs(fixGate) do
+--          fixGateCounter = fixGateCounter + 1
+--          if value.symbol ~= nil then
+--            print(value.symbol)
+--          end
+--      end
+      --print(fixGateCounter)
       fixGateCounter = 0
     if  objListener : getLastMessage() : getTitle() == "Begin warming" and flag then
         print("BEGIN WARMING NOW!!!")
@@ -442,8 +443,8 @@ while true do
         
     elseif objListener : getLastMessage() : getTitle() == "Stop connection" then
         objListener : setLastMessage(" ")
-        orderSession.stop(initiator)
-        orderSession.stop(acc)
+        orderSession.stop(initiator2)
+        --orderSession.stop(acc)
         print("CONNECTION STOP!")
     elseif objListener : getLastMessage() : getTitle() == "Make connection" then
         objListener : setLastMessage(" ")

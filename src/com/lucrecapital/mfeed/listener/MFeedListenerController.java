@@ -40,6 +40,8 @@ public class MFeedListenerController extends TwoArgFunction
       LuaValue[] args = new LuaValue[2];
       args[0] = LuaValue.valueOf(id);
       LuaTable snapshot = new LuaTable();
+      
+      snapshot.set("number", levels.getMsgSeqNum());
       snapshot.set("symbol", levels.getSymbol());
       snapshot.set("exchange", levels.getExchangeCode());
 

@@ -19,6 +19,7 @@ public final class PriceLevels
   public static final char END_OF_BOOK_MARKER = 'T';
   public PriceLevel buyBook[] = new PriceLevel[defDepth];
   public PriceLevel sellBook[] = new PriceLevel[defDepth];
+  public long msgSeqNum = 0;
   public int buyPos;
   public int sellPos;
   public boolean isNew = false;
@@ -81,5 +82,15 @@ public final class PriceLevels
     }
 
     return "--";//Cannot return NULL, just make sure it's not a currency pair
+  }
+  
+  public long getMsgSeqNum ()
+  {
+      return msgSeqNum;
+  }
+  
+  public void setMsgSeqNum(long num)
+  {
+      msgSeqNum = num;
   }
 }
